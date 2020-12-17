@@ -19,14 +19,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
+            "scripts": [],
           },
           "configurations": {
             "production": {
@@ -83,13 +78,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         },
@@ -99,11 +89,9 @@
             "tsConfig": [
               "tsconfig.app.json",
               "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "e2e/tsconfig.json",
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -119,6 +107,121 @@
           }
         }
       }
-    }},
+    },
+    "fibonacci-webworker": {
+      "projectType": "library",
+      "root": "projects/fibonacci-webworker",
+      "sourceRoot": "projects/fibonacci-webworker/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/fibonacci-webworker/tsconfig.lib.json",
+            "project": "projects/fibonacci-webworker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/fibonacci-webworker/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/fibonacci-webworker/src/test.ts",
+            "tsConfig": "projects/fibonacci-webworker/tsconfig.spec.json",
+            "karmaConfig": "projects/fibonacci-webworker/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/fibonacci-webworker/tsconfig.lib.json",
+              "projects/fibonacci-webworker/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "fibonacci": {
+      "projectType": "library",
+      "root": "projects/fibonacci",
+      "sourceRoot": "projects/fibonacci/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/fibonacci/tsconfig.lib.json",
+            "project": "projects/fibonacci/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/fibonacci/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/fibonacci/src/test.ts",
+            "tsConfig": "projects/fibonacci/tsconfig.spec.json",
+            "karmaConfig": "projects/fibonacci/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/fibonacci/tsconfig.lib.json",
+              "projects/fibonacci/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "demo-lib-consuming-webworker": {
+      "projectType": "library",
+      "root": "projects/demo-lib-consuming-webworker",
+      "sourceRoot": "projects/demo-lib-consuming-webworker/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/demo-lib-consuming-webworker/tsconfig.lib.json",
+            "project": "projects/demo-lib-consuming-webworker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/demo-lib-consuming-webworker/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/demo-lib-consuming-webworker/src/test.ts",
+            "tsConfig": "projects/demo-lib-consuming-webworker/tsconfig.spec.json",
+            "karmaConfig": "projects/demo-lib-consuming-webworker/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/demo-lib-consuming-webworker/tsconfig.lib.json",
+              "projects/demo-lib-consuming-webworker/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "demo-webworker-library"
 }

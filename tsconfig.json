@@ -1,4 +1,3 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -11,10 +10,18 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "module": "esnext",
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "fibonacci": ["dist/fibonacci/fibonacci", "dist/fibonacci"],
+      "fibonacci-webworker": [
+        "dist/fibonacci-webworker/fibonacci-webworker",
+        "dist/fibonacci-webworker"
+      ],
+      "demo-lib-consuming-webworker": [
+        "dist/demo-lib-consuming-webworker/demo-lib-consuming-webworker",
+        "dist/demo-lib-consuming-webworker"
+      ]
+    }
   }
 }
