@@ -1,16 +1,34 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { FIBONACCI_WEBWORKER_FACTORY } from 'fibonacci-webworker';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        loadChildren: () =>
+          import('demo-lib-consuming-webworker').then(
+            (m) => m.DemoLibConsumingWebworkerModule
+          ),
+      },
+    ]),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: FIBONACCI_WEBWORKER_FACTORY,
+      useValue: function (): Worker {
+        return new Worker('projects/fibonacci-webworker/src/lib/fibonacci', {
+          name: 'fibonacci.worker',
+          type: 'module',
+        });
+      },
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
