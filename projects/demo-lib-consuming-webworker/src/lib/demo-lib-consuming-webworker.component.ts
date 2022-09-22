@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FIBONACCI_WEBWORKER_FACTORY } from 'fibonacci-webworker';
+import { FIBONACCI_WEBWORKER_FACTORY } from 'projects/fibonacci-webworker/src/public-api';
 import { interval } from 'rxjs';
 
 @Component({
