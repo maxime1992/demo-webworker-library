@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { FIBONACCI_WEBWORKER_FACTORY } from 'projects/fibonacci-webworker/src/public-api';
+import { FIBONACCI_WEBWORKER_FACTORY } from 'fibonacci-webworker';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
       {
         path: '',
         loadChildren: () =>
-          import('projects/demo-lib-consuming-webworker/src/lib/demo-lib-consuming-webworker.module').then(
+          import('demo-lib-consuming-webworker').then(
             (m) => m.DemoLibConsumingWebworkerModule
           ),
       },

@@ -13,13 +13,13 @@
     "module": "esnext",
     "lib": ["es2018", "dom"],
     "paths": {
-      "fibonacci": ["dist/fibonacci/fibonacci", "dist/fibonacci"],
+      "fibonacci": ["projects/fibonacci/src/public-api", "dist/fibonacci"],
       "fibonacci-webworker": [
-        "dist/fibonacci-webworker/fibonacci-webworker",
+        "projects/fibonacci-webworker/src/public-api",
         "dist/fibonacci-webworker"
       ],
       "demo-lib-consuming-webworker": [
-        "dist/demo-lib-consuming-webworker/demo-lib-consuming-webworker",
+        "projects/demo-lib-consuming-webworker/src/public-api",
         "dist/demo-lib-consuming-webworker"
       ]
     }
