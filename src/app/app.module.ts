@@ -22,7 +22,7 @@ import { AppComponent } from './app.component';
     {
       provide: FIBONACCI_WEBWORKER_FACTORY,
       useValue: function (): Worker {
-        return new Worker('projects/fibonacci-webworker/src/lib/fibonacci', {
+        return new Worker(new URL('projects/fibonacci-webworker/src/lib/fibonacci', import.meta.url), {
           name: 'fibonacci.worker',
           type: 'module',
         });
