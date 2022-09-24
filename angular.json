@@ -225,5 +225,8 @@
       }
     }
   },
-  "defaultProject": "demo-webworker-library"
+  "defaultProject": "demo-webworker-library",
+  "cli": {
+    "analytics": false
+  }
 }
